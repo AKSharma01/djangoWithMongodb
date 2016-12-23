@@ -1,0 +1,22 @@
+{% extends 'app1/base.html' %}
+
+
+{% block title %}View Data{% endblock %}
+
+{% block content %}
+	<b><strong>View Query</strong> <a href="/">Home Page</a></b><br/>
+
+	<form action="/viewData/" method="post">
+		<input type="text" name="key" placeholder="Key to Search into message field">
+		<input type="submit" name="submit" value="Submit">
+		<input type="Submit" name="submit" value="All">
+	</form>{{value}}
+
+	<table width="100%">
+	<tr><td>Name</td><td>Email</td><td>Quate</td></tr>
+	{% for val in post %}
+		<tr><td>{{ val.name }} </td><td>{{ val.email }} </td><td>{{ val.msg }}</td></tr>		
+	{% endfor %}
+	</table>
+
+{% endblock %}

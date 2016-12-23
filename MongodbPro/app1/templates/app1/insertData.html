@@ -1,0 +1,16 @@
+{%  extends 'app1/base.html' %}
+
+{% block title %}Insert Data{% endblock %}
+
+{% block content %}
+	<b><strong>Insert Query <a href="/">Home page</a></strong></b>
+	<form action="/insertInto/" method="post">
+		<input type="text" name="name" placeholder="Name">
+		<input type="email" name="email" placeholder="Email">
+		<textarea name='msg' placeholder="Message"></textarea>
+		<input type="submit" name="submit" value="Submit">
+	</form>
+	{% if status %}
+		<b>{{ status }}</b>
+	{% endif %}
+{% endblock %}
